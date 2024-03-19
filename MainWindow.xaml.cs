@@ -29,7 +29,7 @@ namespace prac17
         
        void LoadDBInDataGrid() 
        {
-            using (DevyatkinV11Pr17Context _db = new DevyatkinV11Pr17Context())
+            using (Devyatkinv11pr17Context _db = new Devyatkinv11pr17Context())
             {
                 int selectedIndex = dg1.SelectedIndex;
                 dg1.ItemsSource = _db.Участникиs.ToList();
@@ -61,6 +61,34 @@ namespace prac17
                 f.ShowDialog();
                 LoadDBInDataGrid();
             }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result;
+            result = MessageBox.Show("Удалить запись?", "Удаление записи",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes) 
+            { 
+                try
+                {
+                    Участники row = (Участники)dg1.SelectedItem;
+                    if (row != null) 
+                    { 
+                        using(Devyatkinv11pr17Context _db = new Devyatkinv11pr17Context())
+                        {
+                            _db.Участникиs.Remove(row);
+                            _db.SaveChanges();
+                        }
+                        LoadDBInDataGrid();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка удаления");
+                }
+            }
+            else dg1.Focus();
         }
     }
 }

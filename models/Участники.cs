@@ -5,6 +5,8 @@ namespace prac17.models;
 
 public partial class Участники
 {
+    public int Id { get; set; }
+
     public string Фамилия { get; set; } = null!;
 
     public string Имя { get; set; } = null!;

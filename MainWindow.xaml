@@ -14,11 +14,22 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-       
-        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="216,85,0,0" VerticalAlignment="Top" Height="33" Width="74"/>
-        <DataGrid x:Name="dg1" IsReadOnly="True" Margin="0,217,0,0" Grid.RowSpan="2"/>
-        <Button x:Name="btnCancel" Click="btnCancel_Click" Content="Отмена" HorizontalAlignment="Left" Margin="216,133,0,0" VerticalAlignment="Top" Height="30" Width="74"/>
-        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Left" Margin="353,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.209,0.049" Height="33" Width="72"/>
+
+        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="280,0,0,0" VerticalAlignment="Center" Height="33" Width="74"/>
+        <DataGrid x:Name="dg1" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,217,0,0" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding ID}"/>
+                <DataGridTextColumn Width="20*" Header="Фамилия" Binding="{Binding F}"/>
+                <DataGridTextColumn Width="20*" Header="Имя" Binding="{Binding N}"/>
+                <DataGridTextColumn Width="20*" Header="Отчество" Binding="{Binding O}"/>
+                <DataGridTextColumn Width="20*" Header="Фамилия трненера" Binding="{Binding FTR}"/>
+                <DataGridTextColumn Width="20*" Header="Город" Binding="{Binding City}"/>
+                <DataGridTextColumn Width="20*" Header="Танец" Binding="{Binding Dance}"/>
+                <DataGridTextColumn Width="10*" Header="Оценка" Binding="{Binding Estimation}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Left" Margin="368,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.209,0.049" Height="33" Width="72"/>
+        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" HorizontalAlignment="Left" Margin="455,0,0,0" VerticalAlignment="Center" Height="33" Width="74"/>
 
     </Grid>
 </Window>
