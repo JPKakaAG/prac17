@@ -1,4 +1,5 @@
-﻿using prac17.models;
+﻿using Microsoft.IdentityModel.Tokens;
+using prac17.models;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -89,6 +90,36 @@ namespace prac17
                 }
             }
             else dg1.Focus();
+        }
+
+        private void btnFind_Click(object sender, RoutedEventArgs e)
+        {
+            List<Участники> listitem = (List<Участники>)dg1.ItemsSource;
+            var filtered = listitem.Where(p => p.Фамилия.Contains(tbFind.Text));
+            if (filtered.Count() > 0)
+            {
+                var item = filtered.First();
+                dg1.SelectedItem = item;
+                dg1.ScrollIntoView(item);
+                dg1.Focus();
+            }
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbFilter.Text.IsNullOrEmpty()==false)
+            {
+                using (Devyatkinv11pr17Context _db = new Devyatkinv11pr17Context())
+                {
+                    var filter = _db.Участникиs.Where(p => p.Фамилия == tbFilter.Text);
+                    dg1.ItemsSource = filter.ToList();
+                }
+
+            }
+            else 
+            {
+                LoadDBInDataGrid();
+            }
         }
     }
 }

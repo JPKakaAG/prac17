@@ -15,7 +15,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="280,0,0,0" VerticalAlignment="Center" Height="33" Width="74"/>
+        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="275,174,0,0" VerticalAlignment="Top" Height="33" Width="74"/>
         <DataGrid x:Name="dg1" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,217,0,0" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding ID}"/>
@@ -28,8 +28,14 @@
                 <DataGridTextColumn Width="10*" Header="Оценка" Binding="{Binding Estimation}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Left" Margin="368,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.209,0.049" Height="33" Width="72"/>
-        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" HorizontalAlignment="Left" Margin="455,0,0,0" VerticalAlignment="Center" Height="33" Width="74"/>
+        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.209,0.049" Height="33" Width="72"/>
+        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" HorizontalAlignment="Left" Margin="450,174,0,0" VerticalAlignment="Top" Height="33" Width="74" RenderTransformOrigin="0.542,2.198"/>
+        <Button x:Name="btnFind" Click="btnFind_Click" Content="Поиск" HorizontalAlignment="Left" Margin="670,59,0,0" VerticalAlignment="Top" Height="33" Width="120"/>
+        <TextBox x:Name="tbFind" HorizontalAlignment="Left" Margin="670,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Поиск по фамилии" HorizontalAlignment="Left" Margin="670,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Фильтр" HorizontalAlignment="Left" Margin="515,59,0,0" VerticalAlignment="Top" Height="33" Width="120"/>
+        <TextBox x:Name="tbFilter" HorizontalAlignment="Left" Margin="515,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Фильтр по фамилии" HorizontalAlignment="Left" Margin="515,10,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
