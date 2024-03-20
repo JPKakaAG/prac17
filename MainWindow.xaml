@@ -5,37 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prac17"
         mc:Ignorable="d"
-        Title="MainWindow" Loaded="Window_Loaded" Height="450" Width="800">
+        Title="Армянин-программист назвал сына Трафик..." ResizeMode="NoResize" Loaded="Window_Loaded" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="286*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="275,174,0,0" VerticalAlignment="Top" Height="33" Width="74"/>
-        <DataGrid x:Name="dg1" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,217,0,0" Grid.RowSpan="2">
+        <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="0,159,0,0" VerticalAlignment="Top" Height="33" Width="74" Grid.Column="1"/>
+        <DataGrid x:Name="dg1" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,217,0,0" Grid.RowSpan="2" Grid.ColumnSpan="6">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding ID}"/>
-                <DataGridTextColumn Width="20*" Header="Фамилия" Binding="{Binding F}"/>
-                <DataGridTextColumn Width="20*" Header="Имя" Binding="{Binding N}"/>
-                <DataGridTextColumn Width="20*" Header="Отчество" Binding="{Binding O}"/>
-                <DataGridTextColumn Width="20*" Header="Фамилия трненера" Binding="{Binding FTR}"/>
-                <DataGridTextColumn Width="20*" Header="Город" Binding="{Binding City}"/>
-                <DataGridTextColumn Width="20*" Header="Танец" Binding="{Binding Dance}"/>
-                <DataGridTextColumn Width="10*" Header="Оценка" Binding="{Binding Estimation}"/>
+                <DataGridTextColumn Width="10*" Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="20*" Header="Фамилия" Binding="{Binding Фамилия}"/>
+                <DataGridTextColumn Width="20*" Header="Имя" Binding="{Binding Имя}"/>
+                <DataGridTextColumn Width="20*" Header="Отчество" Binding="{Binding Отчество}"/>
+                <DataGridTextColumn Width="20*" Header="Фамилия трненера" Binding="{Binding ФамилияТренера}"/>
+                <DataGridTextColumn Width="20*" Header="Город" Binding="{Binding Город}"/>
+                <DataGridTextColumn Width="20*" Header="Танец" Binding="{Binding Танец}"/>
+                <DataGridTextColumn Width="10*" Header="Оценка" Binding="{Binding Оценка}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.209,0.049" Height="33" Width="72"/>
-        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" HorizontalAlignment="Left" Margin="450,174,0,0" VerticalAlignment="Top" Height="33" Width="74" RenderTransformOrigin="0.542,2.198"/>
-        <Button x:Name="btnFind" Click="btnFind_Click" Content="Поиск" HorizontalAlignment="Left" Margin="670,59,0,0" VerticalAlignment="Top" Height="33" Width="120"/>
-        <TextBox x:Name="tbFind" HorizontalAlignment="Left" Margin="670,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Поиск по фамилии" HorizontalAlignment="Left" Margin="670,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Фильтр" HorizontalAlignment="Left" Margin="515,59,0,0" VerticalAlignment="Top" Height="33" Width="120"/>
-        <TextBox x:Name="tbFilter" HorizontalAlignment="Left" Margin="515,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Фильтр по фамилии" HorizontalAlignment="Left" Margin="515,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" HorizontalAlignment="Right" Margin="0,159,11,0" VerticalAlignment="Top" RenderTransformOrigin="0.209,0.049" Height="33" Width="72" Grid.Column="2"/>
+        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" HorizontalAlignment="Left" Margin="84,159,0,0" VerticalAlignment="Top" Height="33" Width="74" RenderTransformOrigin="0.542,2.198" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnFind" Click="btnFind_Click" Content="Поиск" HorizontalAlignment="Left" Margin="130,78,0,0" VerticalAlignment="Top" Height="33" Width="120" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbFind" HorizontalAlignment="Left" Margin="130,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="4" Height="18" Grid.ColumnSpan="2"/>
+        <Label Content="Поиск по фамилии" HorizontalAlignment="Left" Margin="130,29,0,0" VerticalAlignment="Top" Width="120" Grid.Column="4" Height="26" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Фильтр" HorizontalAlignment="Left" Margin="85,78,0,0" VerticalAlignment="Top" Height="33" Width="120" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbFilter" HorizontalAlignment="Left" Margin="85,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3" Height="18" Grid.ColumnSpan="2"/>
+        <Label Content="Фильтр по фамилии" HorizontalAlignment="Left" Margin="85,29,0,0" VerticalAlignment="Top" Width="120" Grid.Column="3" Height="26" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

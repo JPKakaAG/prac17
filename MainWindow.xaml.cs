@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using prac17.models;
 using System.Text;
 using System.Windows;
@@ -33,6 +34,7 @@ namespace prac17
             using (Devyatkinv11pr17Context _db = new Devyatkinv11pr17Context())
             {
                 int selectedIndex = dg1.SelectedIndex;
+                _db.Участникиs.Load();
                 dg1.ItemsSource = _db.Участникиs.ToList();
                 if (selectedIndex != -1)
                 {
